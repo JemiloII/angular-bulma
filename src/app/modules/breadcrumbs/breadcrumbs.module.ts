@@ -6,7 +6,11 @@ import { BreadcrumbsComponent } from './breadcrumbs.component';
   imports: [
     CommonModule
   ],
-  declarations: [BreadcrumbsComponent],
-  exports: [BreadcrumbsComponent]
+  declarations: [
+    BreadcrumbsComponent
+  ],
+  exports: [
+    BreadcrumbsComponent
+  ]
 })
 export class BreadcrumbsModule { }

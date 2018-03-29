@@ -1,4 +1,12 @@
-<p>
-  breadcrumbs works!
-  <ng-content></ng-content>
-</p>
+<nav class="breadcrumb" aria-label="breadcrumbs" [ngClass]="classList">
+  <ul>
+    <li *ngFor="let link of links" [ngClass]="{'is-active': link.active || !link.url}">
+      <a *ngIf="link.name" [href]="link.url">
+        <span *ngIf="link.icon" class="icon" [ngClass]="iconClassList(link.icon)">
+          <i [ngClass]="[link.icon.type || 'fas', 'fa-' + link.icon.name]"></i>
+        </span>
+        <span>{{link.name}}</span>
+      </a>
+    </li>
+  </ul>
+</nav>

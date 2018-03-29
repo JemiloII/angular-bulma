@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BreadcrumbsModule } from './modules/breadcrumbs/breadcrumbs.module';
 import { NgModule } from '@angular/core';
 
 
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BreadcrumbsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
