@@ -24,39 +24,35 @@ export class BreadcrumbsComponent implements OnInit {
 
   @Input('has-arrow-separator')
   public set arrow(value: string) {
-    console.log('value:', typeof value);
-    this.options.arrow = value === '' || JSON.parse(value);
+    this.setOptions('arrow', value);
   };
 
   @Input('has-bullet-separator')
   public set bullet(value: string) {
-    console.log('value:', typeof value);
-    this.options.bullet = value === '' || JSON.parse(value);
+    this.setOptions('bullet', value);
   };
 
   @Input('has-dot-separator')
   public set dot(value: string) {
-    console.log('value:', typeof value);
-    this.options.dot = value === '' || JSON.parse(value);
+    this.setOptions('dot', value);
   };
 
   @Input('has-succeeds-separator')
   public set succeeds(value: string) {
-    console.log('value:', typeof value);
-    this.options.succeeds = value === '' || JSON.parse(value);
+    this.setOptions('succeeds', value);
   };
 
   @Input('is-centered')
   public set centered(value: string) {
-    console.log('value:', typeof value);
-    this.options.centered = value === '' || JSON.parse(value);
+    this.setOptions('centered', value);
   };
 
   @Input('is-right')
   public set right(value: string) {
-    console.log('value:', typeof value);
-    this.options.right = value === '' || JSON.parse(value);
+    this.setOptions('right', value);
   };
+
+  constructor() { }
 
   public get classList() {
     return {
@@ -77,11 +73,11 @@ export class BreadcrumbsComponent implements OnInit {
     };
   }
 
-  constructor() { }
+  private setOptions(name, value) {
+    this.options[name] = value === '' || JSON.parse(value);
+  }
 
   ngOnInit() {
-    console.log('Links:', this.links);
-
     if (this.align) {
       this.options[this.align === 'center' ? 'centered' : this.align] = true;
     }
